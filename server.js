@@ -63,7 +63,7 @@ app.post("/send-sms", async (req, res) => {
 app.post("/send-email", async (req, res) => {
   const { email, code } = req.body;
 
-  email = email;
+  usersEmail = email;
   verificationCode = code;
 
   const message = {
