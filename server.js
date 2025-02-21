@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cors());
 
 // Twilio credentials from environment variables
-const { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER } =
+const { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER, SENDGRID_API_KEY } =
   process.env;
 
 // Create Twilio client
@@ -28,7 +28,7 @@ app.get("/", async (req, res) => {
 });
 
 // Set your SendGrid API Key
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+sgMail.setApiKey(SENDGRID_API_KEY);
 
 // Email Transporter
 const transporter = nodemailer.createTransport({
