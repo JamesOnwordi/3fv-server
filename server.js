@@ -74,6 +74,8 @@ app.post("/send-email", async (req, res) => {
     html: `<p>Your verification code is: <strong>${code}</strong></p>`,
   };
 
+  console.log("SendGrid API Key:", process.env.SENDGRID_API_KEY);
+
   try {
     await sgMail.send(message);
     console.log("Verification email sent!");
